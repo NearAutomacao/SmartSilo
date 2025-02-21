@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard com Sidebar</title>
     <style>
-        /* Estilos da Sidebar */
+        /* Estilos da Sidebar (mantidos iguais) */
         .sidebar {
             height: 100%;
             width: 60px;
@@ -64,7 +64,6 @@
             margin-left: 250px;
         }
 
-        /* Estilo melhorado do botão de toggle */
         .toggle-btn {
             position: fixed;
             left: 70px;
@@ -88,7 +87,7 @@
         /* Estilos dos Silos com Moldura */
         .card-body {
             min-height: 150px;
-            padding: 0; /* Removendo padding para alinhar mais próximo */
+            padding: 0;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -96,32 +95,38 @@
         }
 
         .silo-frame {
-            border: 2px solid #a2cffe; /* Cor azul clara da borda, como na imagem */
-            padding: 5px; /* Reduzindo o espaço interno para diminuir o tamanho da moldura */
-            border-radius: 0; /* Mantendo bordas retas */
-            background-color: white; /* Fundo branco, como na imagem */
+            border: 2px solid #a2cffe;
+            padding: 5px;
+            border-radius: 0;
+            background-color: white;
             display: flex;
-            flex-direction: column; /* Mantendo a frase acima dos silos */
-            gap: 5px; /* Pequeno espaço entre a frase e os silos */
-            width: 220px; /* Definindo largura fixa para reduzir o tamanho e alinhar próximo à sidebar */
-            align-items: flex-start; /* Alinhando tudo à esquerda */
-            margin-left: 0; /* Alinhando o mais próximo possível da sidebar */
+            flex-direction: column;
+            gap: 5px;
+            width: 350px; /* Aumentei a largura para acomodar os pesos */
+            align-items: flex-start;
+            margin-left: 0;
         }
 
         .silo-header {
-            font-size: 12px; /* Mantendo o tamanho reduzido da frase */
-            color: #333; /* Cor do texto mais escura, como na imagem */
-            font-weight: normal; /* Texto normal, sem negrito */
-            width: 100%; /* Ocupa toda a largura da moldura */
-            text-align: left; /* Alinhando o texto à esquerda */
-            padding-left: 5px; /* Pequeno padding para melhor visualização */
+            font-size: 12px;
+            color: #333;
+            font-weight: normal;
+            width: 100%;
+            text-align: left;
+            padding-left: 5px;
+        }
+
+        .silo-content {
+            display: flex;
+            width: 100%;
+            gap: 10px;
+            padding-left: 5px;
         }
 
         .silos {
             display: flex;
-            gap: 10px; /* Mantendo o espaço reduzido entre os silos */
-            width: auto; /* Ajustado dinamicamente */
-            padding-left: 5px; /* Pequeno padding para alinhamento à esquerda */
+            gap: 10px;
+            width: auto;
         }
 
         .silo-container {
@@ -168,22 +173,21 @@
             z-index: 3;
         }
 
-        /* Novo estilo para os pesos fora da moldura */
+        /* Estilo para os pesos dentro da moldura */
         .peso-silos {
             display: flex;
             flex-direction: column;
+            justify-content: center;
             gap: 5px;
             font-size: 14px;
             color: #333;
             font-weight: normal;
-            margin-top: 10px; /* Espaço acima dos pesos */
-            margin-left: 0; /* Alinhando os pesos à esquerda, próximo à moldura */
-            width: auto;
+            margin-left: 10px;
         }
     </style>
 </head>
 <body>
-    <!-- Sidebar -->
+    <!-- Sidebar (mantida igual) -->
     <div class="sidebar" id="sidebar">
         <a href="#dashboard">
             <span class="icon">🏠</span>
@@ -199,10 +203,8 @@
         </a>
     </div>
 
-    <!-- Botão de toggle atualizado com ícone de seta, ao lado da sidebar -->
     <button class="toggle-btn" onclick="toggleSidebar()">❯</button>
 
-    <!-- Conteúdo principal -->
     <div class="content" id="content">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
@@ -216,24 +218,26 @@
                             <div class="col mr-2"></div>
                             <div class="silo-frame">
                                 <div class="silo-header">Aviário 01 - Jéssica De Ré - Matricula: 112939</div>
-                                <div class="silos">
-                                    <div class="silo-container" data-percent="90">
-                                        <div class="silo-fill"></div>
-                                        <img src="/assets/Ativo_1_4x.png" alt="Imagem" class="silo-img">
-                                        <div class="silo-percentage">90%</div>
+                                <div class="silo-content">
+                                    <div class="silos">
+                                        <div class="silo-container" data-percent="90">
+                                            <div class="silo-fill"></div>
+                                            <img src="/assets/Ativo_1_4x.png" alt="Imagem" class="silo-img">
+                                            <div class="silo-percentage">90%</div>
+                                        </div>
+                                        <div class="silo-container" data-percent="30">
+                                            <div class="silo-fill"></div>
+                                            <img src="/assets/Ativo_1_4x.png" alt="Imagem" class="silo-img">
+                                            <div class="silo-percentage">30%</div>
+                                        </div>
                                     </div>
-                                    <div class="silo-container" data-percent="30">
-                                        <div class="silo-fill"></div>
-                                        <img src="/assets/Ativo_1_4x.png" alt="Imagem" class="silo-img">
-                                        <div class="silo-percentage">30%</div>
+                                    <div class="peso-silos">
+                                        <div>PESO SILO 01:</div>
+                                        <div>500 kg</div>
+                                        <div>PESO SILO 02:</div>
+                                        <div>450 kg</div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="peso-silos">
-                                <div>PESO SILO 01:</div> 
-                                <div>500 kg</div>
-                                <div>PESO SILO 02:</div>
-                                <div>450 kg</div>
                             </div>
                         </div>
                     </div>
@@ -243,7 +247,6 @@
     </div>
 
     <script>
-        // Função para expandir/retrair a sidebar
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const content = document.getElementById('content');
@@ -252,17 +255,15 @@
             sidebar.classList.toggle('expanded');
             content.classList.toggle('expanded');
 
-            // Atualiza o ícone do botão para indicar a direção (seta para a direita ou esquerda)
             if (sidebar.classList.contains('expanded')) {
                 toggleBtn.textContent = '❮';
-                toggleBtn.style.left = '260px'; // Ajusta a posição do botão quando a sidebar está expandida (250px + 10px de margem)
+                toggleBtn.style.left = '260px';
             } else {
                 toggleBtn.textContent = '❯';
-                toggleBtn.style.left = '70px'; // Retorna para o lado da sidebar recolhida (60px + 10px)
+                toggleBtn.style.left = '70px';
             }
         }
 
-        // Função para atualizar os silos
         function updateSilos() {
             document.querySelectorAll('.silo-container').forEach(silo => {
                 const percent = parseInt(silo.getAttribute('data-percent'));
@@ -282,7 +283,6 @@
             });
         }
 
-        // Chama a função ao carregar a página
         document.addEventListener("DOMContentLoaded", updateSilos);
     </script>
 </body>
