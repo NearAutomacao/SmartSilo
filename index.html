@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard com Sidebar</title>
     <style>
-        /* Estilos da Sidebar (mantidos iguais) */
+        /* Estilos mantidos iguais ao código anterior */
         .sidebar {
             height: 100%;
             width: 60px;
@@ -84,7 +84,6 @@
             transform: scale(1.1);
         }
 
-        /* Estilos dos Silos com Moldura */
         .card-body {
             min-height: 150px;
             padding: 0;
@@ -102,7 +101,7 @@
             display: flex;
             flex-direction: column;
             gap: 5px;
-            width: 350px; /* Aumentei a largura para acomodar os pesos */
+            width: 350px;
             align-items: flex-start;
             margin-left: 0;
         }
@@ -173,7 +172,6 @@
             z-index: 3;
         }
 
-        /* Estilo para os pesos dentro da moldura */
         .peso-silos {
             display: flex;
             flex-direction: column;
@@ -187,13 +185,13 @@
     </style>
 </head>
 <body>
-    <!-- Sidebar (mantida igual) -->
+    <!-- Sidebar com o link "Gráficos" atualizado -->
     <div class="sidebar" id="sidebar">
         <a href="#dashboard">
             <span class="icon">🏠</span>
             <span class="menu-text">Dashboard</span>
         </a>
-        <a href="#graficos">
+        <a href="graficos.html">
             <span class="icon">📊</span>
             <span class="menu-text">Gráficos</span>
         </a>
