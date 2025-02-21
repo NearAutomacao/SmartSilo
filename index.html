@@ -66,10 +66,10 @@
 
         /* Estilo melhorado do botão de toggle */
         .toggle-btn {
-            position: fixed; /* Voltando para 'fixed' para ficar fixo na tela */
-            left: 70px; /* Posicionado ao lado direito da sidebar (60px + 10px de margem) */
-            top: 10px; /* Mantendo próximo ao topo */
-            z-index: 1001; /* Acima da sidebar, mas abaixo do conteúdo principal se necessário */
+            position: fixed;
+            left: 70px;
+            top: 10px;
+            z-index: 1001;
             background-color: #3b5998;
             color: white;
             border: none;
@@ -85,7 +85,7 @@
             transform: scale(1.1);
         }
 
-        /* Estilos dos Silos */
+        /* Estilos dos Silos com Moldura */
         .card-body {
             min-height: 150px;
             padding: 20px;
@@ -95,7 +95,11 @@
             width: 100%;
         }
 
-        .silos-peso-container {
+        .silo-frame {
+            border: 2px solid #3b5998; /* Moldura azul (mesma cor da sidebar) */
+            padding: 15px; /* Espaço interno para melhor visualização */
+            border-radius: 8px; /* Bordas arredondadas para um visual moderno */
+            background-color: #f8f9fa; /* Fundo leve para contraste */
             display: flex;
             align-items: center;
             gap: 20px;
@@ -114,6 +118,7 @@
             flex-wrap: wrap;
             gap: 2px;
             font-size: 14px;
+            width: 30%; /* Ajuste para melhor distribuição dentro da moldura */
         }
 
         .silo-container {
@@ -196,7 +201,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2"></div>
-                            <div class="silos-peso-container">
+                            <div class="silo-frame">
                                 <div class="silos">
                                     <div class="silo-container" data-percent="90">
                                         <div class="silo-fill"></div>
@@ -235,10 +240,10 @@
 
             // Atualiza o ícone do botão para indicar a direção (seta para a direita ou esquerda)
             if (sidebar.classList.contains('expanded')) {
-                toggleBtn.textContent = '❮'; // Seta para a esquerda (recolher)
+                toggleBtn.textContent = '❮';
                 toggleBtn.style.left = '260px'; // Ajusta a posição do botão quando a sidebar está expandida (250px + 10px de margem)
             } else {
-                toggleBtn.textContent = '❯'; // Seta para a direita (expandir)
+                toggleBtn.textContent = '❯';
                 toggleBtn.style.left = '70px'; // Retorna para o lado da sidebar recolhida (60px + 10px)
             }
         }
