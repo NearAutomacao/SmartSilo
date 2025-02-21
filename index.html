@@ -88,37 +88,40 @@
         /* Estilos dos Silos com Moldura */
         .card-body {
             min-height: 150px;
-            padding: 20px;
+            padding: 0; /* Removendo padding para alinhar mais próximo */
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
             width: 100%;
         }
 
         .silo-frame {
             border: 2px solid #a2cffe; /* Cor azul clara da borda, como na imagem */
-            padding: 10px; /* Mantendo o espaço interno reduzido */
+            padding: 5px; /* Reduzindo o espaço interno para diminuir o tamanho da moldura */
             border-radius: 0; /* Mantendo bordas retas */
             background-color: white; /* Fundo branco, como na imagem */
             display: flex;
-            flex-direction: column; /* Alterado para empilhar a frase acima dos silos */
+            flex-direction: column; /* Mantendo a frase acima dos silos */
             gap: 5px; /* Pequeno espaço entre a frase e os silos */
-            width: auto; /* Ajustado para cobrir apenas o conteúdo necessário */
-            align-items: center; /* Centralizando horizontalmente */
+            width: 220px; /* Definindo largura fixa para reduzir o tamanho e alinhar próximo à sidebar */
+            align-items: flex-start; /* Alinhando tudo à esquerda */
+            margin-left: 0; /* Alinhando o mais próximo possível da sidebar */
         }
 
         .silo-header {
-            font-size: 12px; /* Reduzindo o tamanho da fonte da frase */
+            font-size: 12px; /* Mantendo o tamanho reduzido da frase */
             color: #333; /* Cor do texto mais escura, como na imagem */
             font-weight: normal; /* Texto normal, sem negrito */
             width: 100%; /* Ocupa toda a largura da moldura */
-            text-align: center; /* Centralizando o texto */
+            text-align: left; /* Alinhando o texto à esquerda */
+            padding-left: 5px; /* Pequeno padding para melhor visualização */
         }
 
         .silos {
             display: flex;
             gap: 10px; /* Mantendo o espaço reduzido entre os silos */
             width: auto; /* Ajustado dinamicamente */
+            padding-left: 5px; /* Pequeno padding para alinhamento à esquerda */
         }
 
         .silo-container {
@@ -174,6 +177,7 @@
             color: #333;
             font-weight: normal;
             margin-top: 10px; /* Espaço acima dos pesos */
+            margin-left: 0; /* Alinhando os pesos à esquerda, próximo à moldura */
             width: auto;
         }
     </style>
