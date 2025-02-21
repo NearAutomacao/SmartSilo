@@ -67,6 +67,64 @@
         .collapsed + .content .toggle-btn {
             left: 90px;
         }
+        .silos-peso-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .silos {
+            display: flex;
+            gap: 20px;
+            width: 70%;
+        }
+        .peso-silos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2px;
+            font-size: 14px;
+        }
+        .silo-container {
+            position: relative;
+            width: 80px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+        .silo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            z-index: 2;
+        }
+        .silo-fill {
+            position: absolute;
+            bottom: 17%;
+            width: 100%;
+            max-height: 66%;
+            height: 0;
+            background-color: green;
+            opacity: 0.6;
+            transition: height 0.5s ease-in-out, background-color 0.5s;
+            z-index: 1;
+        }
+        .silo-percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid black;
+            font-weight: bold;
+            color: black;
+            z-index: 3;
+        }
     </style>
 </head>
 <body>
@@ -80,7 +138,26 @@
     <div class="content">
         <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
         <h1>Dashboard</h1>
-        <p>Conteúdo principal aqui...</p>
+        <div class="silos-peso-container">
+            <div class="silos">
+                <div class="silo-container" data-percent="90">
+                    <div class="silo-fill"></div>
+                    <img src="/assets/Ativo_1_4x.png" alt="Imagem" class="silo-img">
+                    <div class="silo-percentage">90%</div>
+                </div>
+                <div class="silo-container" data-percent="30">
+                    <div class="silo-fill"></div>
+                    <img src="/assets/Ativo_1_4x.png" alt="Imagem" class="silo-img">
+                    <div class="silo-percentage">30%</div>
+                </div>
+            </div>
+            <div class="peso-silos">
+                <div class="font-weight-bold">PESO SILO 01:</div> 
+                <div>500 kg</div>
+                <div class="font-weight-bold mt-2">PESO SILO 02:</div>
+                <div>450 kg</div>
+            </div>
+        </div>
     </div>
     <script>
         function toggleSidebar() {
@@ -90,3 +167,4 @@
     </script>
 </body>
 </html>
+
