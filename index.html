@@ -66,23 +66,23 @@
 
         /* Estilo melhorado do botão de toggle */
         .toggle-btn {
-            position: fixed;
-            left: 10px; /* Ajuste para ficar mais próximo da borda esquerda */
-            top: 10px; /* Ajuste para posicionamento mais natural */
-            z-index: 1100;
+            position: absolute; /* Mudado de 'fixed' para 'absolute' */
+            left: 10px; /* Posição relativa ao conteúdo, não fixa na viewport */
+            top: 10px;
+            z-index: 1001; /* Mantém acima da sidebar, mas abaixo do conteúdo principal */
             background-color: #3b5998;
             color: white;
             border: none;
-            padding: 8px 12px; /* Aumentei o padding para melhor clique */
+            padding: 8px 12px;
             cursor: pointer;
-            border-radius: 4px; /* Borda mais suave */
-            font-size: 16px; /* Tamanho de fonte ajustado */
-            transition: transform 0.3s; /* Adiciona animação ao clicar */
+            border-radius: 4px;
+            font-size: 16px;
+            transition: transform 0.3s;
         }
 
         .toggle-btn:hover {
-            background-color: #2a4373; /* Mesma cor hover da sidebar */
-            transform: scale(1.1); /* Efeito de zoom ligeiro ao passar o mouse */
+            background-color: #2a4373;
+            transform: scale(1.1);
         }
 
         /* Estilos dos Silos */
