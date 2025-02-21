@@ -97,30 +97,31 @@
 
         .silo-frame {
             border: 2px solid #a2cffe; /* Cor azul clara da borda, como na imagem */
-            padding: 10px; /* Espaço interno reduzido para se alinhar com a imagem */
-            border-radius: 0; /* Removendo bordas arredondadas para se alinhar com a imagem */
+            padding: 10px; /* Mantendo o espaço interno reduzido */
+            border-radius: 0; /* Mantendo bordas retas */
             background-color: white; /* Fundo branco, como na imagem */
             display: flex;
             align-items: center;
-            gap: 20px; /* Mantendo o espaçamento entre silos e pesos */
+            gap: 10px; /* Reduzindo o espaço entre silos e pesos para 10px */
             width: 100%;
-            justify-content: space-between;
+            justify-content: flex-start; /* Alinhando corretamente lado a lado */
         }
 
         .silos {
             display: flex;
-            gap: 20px;
-            width: auto; /* Removendo largura fixa para se ajustar dinamicamente */
+            gap: 10px; /* Reduzindo o espaço entre os silos também */
+            width: auto; /* Mantendo ajustado dinamicamente */
         }
 
         .peso-silos {
             display: flex;
-            flex-direction: column; /* Alterado para colunas, como na imagem */
-            gap: 5px; /* Espaçamento menor entre as linhas de peso */
+            flex-direction: column; /* Mantendo colunas verticais */
+            gap: 5px; /* Mantendo espaçamento menor entre as linhas de peso */
             font-size: 14px;
-            width: auto; /* Removendo largura fixa para se ajustar dinamicamente */
+            width: auto; /* Mantendo ajustado dinamicamente */
             color: #333; /* Cor do texto mais escura, como na imagem */
-            font-weight: normal; /* Remove negrito para se alinhar com a imagem */
+            font-weight: normal; /* Texto normal, sem negrito */
+            margin-left: 10px; /* Adicionando margem esquerda para alinhamento fino */
         }
 
         .silo-container {
