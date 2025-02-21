@@ -66,10 +66,10 @@
 
         /* Estilo melhorado do botão de toggle */
         .toggle-btn {
-            position: absolute; /* Mudado de 'fixed' para 'absolute' */
-            left: 10px; /* Posição relativa ao conteúdo, não fixa na viewport */
-            top: 10px;
-            z-index: 1001; /* Mantém acima da sidebar, mas abaixo do conteúdo principal */
+            position: fixed; /* Voltando para 'fixed' para ficar fixo na tela */
+            left: 70px; /* Posicionado ao lado direito da sidebar (60px + 10px de margem) */
+            top: 10px; /* Mantendo próximo ao topo */
+            z-index: 1001; /* Acima da sidebar, mas abaixo do conteúdo principal se necessário */
             background-color: #3b5998;
             color: white;
             border: none;
@@ -178,7 +178,7 @@
         </a>
     </div>
 
-    <!-- Botão de toggle atualizado com ícone de seta -->
+    <!-- Botão de toggle atualizado com ícone de seta, ao lado da sidebar -->
     <button class="toggle-btn" onclick="toggleSidebar()">❯</button>
 
     <!-- Conteúdo principal -->
@@ -236,8 +236,10 @@
             // Atualiza o ícone do botão para indicar a direção (seta para a direita ou esquerda)
             if (sidebar.classList.contains('expanded')) {
                 toggleBtn.textContent = '❮'; // Seta para a esquerda (recolher)
+                toggleBtn.style.left = '260px'; // Ajusta a posição do botão quando a sidebar está expandida (250px + 10px de margem)
             } else {
                 toggleBtn.textContent = '❯'; // Seta para a direita (expandir)
+                toggleBtn.style.left = '70px'; // Retorna para o lado da sidebar recolhida (60px + 10px)
             }
         }
 
